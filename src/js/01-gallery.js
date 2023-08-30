@@ -18,7 +18,7 @@ function galleryMarkup(array) {
       class="gallery__image"
       src="${preview}"
       data-source="${original}"
-      alt="Image ${description}"
+      alt="${description}"
     />
   </a>
 </li>`;
@@ -34,19 +34,16 @@ function renderGalleryList(galleryArr) {
 }
 renderGalleryList(galleryItems);
 
-refs.galleryItem = document.querySelector('.gallery__item');
-refs.galleryImage = document.querySelector('.gallery__link');
-
 refs.galleryList.addEventListener('click', onGalleryListClick);
 
 let imageBox;
 const onBoxShow = () => {
     document.addEventListener('keydown', onDocumentKeyDown);
-    // console.log('listener added');
+  
 }
 const onBoxClose = () => {
     document.removeEventListener('keydown', onDocumentKeyDown);
-    // console.log('listener removed');
+  
 }
 
 function onGalleryListClick(event) {
